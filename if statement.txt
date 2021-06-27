@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main() {
+
+int x,y;
+cout<<"Enter the value of x:";    // user can also print the numbers in one line as cout<<"Enter 2 nos;
+cin>>x;                           // and can read by writing cin>>x>>y;
+cout<<"Enter the value of y:";
+cin>>y;
+
+if(x>y)
+{
+	cout<<"x is greater than y";
+}
+else
+{
+	cout<<"x is not greater than y";
+}
+return 0;
+}
