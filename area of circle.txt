@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main() {
+	float area,r;    //float datatype is used for exact decimal values
+	cout<<"Enter the radius of circle"<<""<<endl;
+	cin>>r;
+	area=3.14*r*r;
+	cout<<"Area of circle is"<<""<<area;
+    return 0;
+}
