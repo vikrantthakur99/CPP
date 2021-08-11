@@ -1,102 +1,49 @@
 #include<iostream>
 using namespace std;
 
-class Rectangle
+class Parent
 {
-    private:
-    int length;
-    int breadth;
-            
-    public:
-    Rectangle();
-    Rectangle(int l,int b);
-   // Rectangle(Rectangle &r);
-    int getLength(){return length;}
-    int getBreadth(){return breadth;}
-            
-    void setLength(int l);        
-    void setBreadth(int b);
-    int area();        
-    int perimeter();        
-    bool isSquare();        
-    ~Rectangle();
-    
-};
-    
-class Cuboid:public Rectangle
+private: int a;
+protected int b;
+public int c;
+
+void funParent()
 {
-    private:
-    int height;
-            
-	public:
-    Cuboid(int h)
-    {
-        height=h;
-    }
-                
-    int getHeight(){return height;}
-            
-    void setHeight(int h){height=h;}
-            
-    int volume(){return getLength()*getBreadth()*height;}
-    
+a=10;
+b=5;
+c=15;	
+}	
 };
-    
+
+class Child:public Parent
+{
+public:
+	
+void funChild()
+{
+//a=10;
+b=5;
+c=15;	
+}		
+};	
+
+class GrandChild:public Child
+{
+public;
+
+void funGrandChild()
+{
+//a=10;
+b=5;
+c=20;	
+}	
+};
+
 int main()
 {
-    Cuboid c(5);
-    c.setLength(10);
-    c.setBreadth(7);
-        
-    cout<<"Volume is "<<c.volume()<<endl;
-        
+Child c;
+//c.a=10;
+//c.b=5;
+c.c=20;	
 }
     
-Rectangle::Rectangle()
-{
-    length=1;
-    breadth=1;
-}
-    
-Rectangle::Rectangle(int l,int b)
-{
-    length=l;
-    breadth=b;
-}
-    /*
-Rectangle::Rectangle(Rectangle &r)
-{
-    length=r.length;
-    breadth=r.breadth;
-}
-    */
-void Rectangle::setLength(int l)
-{
-    length=l;
-}
-    
-void Rectangle::setBreadth(int b)
-{
-    breadth=b;
-}
-    
-int Rectangle::area()
-{
-    return length*breadth;
-}
-    
-int Rectangle::perimeter()
-{
-    return 2*(length+breadth);
-}
-    
-bool Rectangle::isSquare()
-{
-    return length==breadth;
-}
-    
-Rectangle::~Rectangle()
-{
-    // cout<<"Rectangle Destroyed";
-}
- 
